@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register or log in</title>
+</head>
+<body>
+    <h1>Register New User</h1>
+    <form action="/create_new_user" method="POST">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="first_name">First Name</label>
+        <input type="text" name= "first_name" id="first_name" value=""> <br>
+        <label for="last_name">Last Name</label>
+        <input type="text" name= "last_name" id="last_name" value=""> <br>
+        <label for="email"> E-Mail</label>
+        <input type="text" name= "email" id="email" value=""> <br>
+        <label for="password">Password</label>
+        <input type="text" name= "password" id="password" value=""> <br>
+        <label for="confirm_password">Confirm Password</label>
+        <input type="text" name= "confirm_password" id="confirm_password" value=""> <br>
+        <input type="submit" value= "Register">
+    </form>
+
+    <h1>Log In</h1>
+    <form action="/log_in" method="POST">
+        <label for="email">E-mail</label>
+        <input type="text" name= "email" id="email" value=""> <br>
+        <label for="password">Password</label>
+        <input type="text" name= "password" id="password" value=""> <br>
+        <input type="submit" value= "LogIn">
+    </form>
+</body>
+</html>

@@ -7,8 +7,8 @@
     <title>Successful login</title>
 </head>
 <body>
-    <h1>Welcome, {{user.first_name}} !</h1>
-    <form action="/clear">
+    <h1>Welcome, {{this_user.first_name}} {{this_user.last_name}}!</h1>
+    <form action="/logout">
         <input type="submit" value= "logout">
     </form>
 </body>
